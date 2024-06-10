@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO DE CALIFICACIONES</title>
+    <style>
+        .result{
+          color:black;
+        } 
+        table{
+          width:50%;
+          margin:20px auto;
+          border-collapse:collapse;
+        } 
+        th,td{
+          border:2px solid black;
+          padding:10px;
+        }
+        th{
+          background-color:rgb(107, 144, 187);
+          color:white;
+          font-weight:bold;
+        }
+        td{
+          background-color: rgb(192, 212, 255);
+          color:black;
+        }
+      </style>
+    <script>
+        //Juan Antonio Garcia Morante y Alexander Lozada Salgado
+        document.write("<center>");
+        document.write("<h1>REGISTRO DE CALIFICACIONES:</h1>"); 
+        document.write("<table border=4>");
+        document.write("<tr>")
+        document.write("<th>NOMBRE</th>");
+        document.write("<th>EDAD</th>");
+        document.write("<th>PARCIAL 1</th>");
+        document.write("<th>PARCIAL 2</th>");
+        document.write("<th>PARCIAL 3</th>");
+        document.write("<th>PROMEDIO</th>");
+        document.write("<th>A / R</th>");
+        document.write("</tr>");
+
+        var alumno1= new Array("Juan Antonio", 16, 10, 9, 9);
+        var alumno2= new Array("Alexander", 17, 8, 9, 9);
+        var alumno3= new Array("Samuel", 16, 10, 10, 9);
+        var alumno4= new Array("Danny", 30, 10, 9, 10);
+        var alumno5= new Array("Andrea", 17, 9, 8, 9);
+        var alumnos= new Array(alumno1,alumno2,alumno3,alumno4,alumno5);
+        for (var i=0; i<alumnos.length; i++){
+            var alum = alumnos[i];
+            var nombre = alum[0];
+            var edad = alum[1];
+            var c1 = alum[2];
+            var c2 = alum[3];
+            var c3 = alum[4];
+            var prom = (c1 + c2 + c3)/3;
+            var redond;
+            var pregunta;
+
+            if(prom >= 6){
+                redond = Math.round(prom);
+            }else{
+                redond = Math.floor(prom);
+            }
+
+            if(prom >= 6){
+                pregunta = 'APROBADO';
+            }else{
+                pregunta = 'REPROBADO';
+            }
+
+            document.write("<tr>");
+            document.write("<td><center>" + nombre + "</center></td>");
+            document.write("<td><center>" + edad + "</center></td>");
+            document.write("<td><center>" + c1 + "</center></td>");
+            document.write("<td><center>" + c2 + "</center></td>");
+            document.write("<td><center>" + c3 + "</center></td>");
+            document.write("<td><center>" + redond + "</center></td>");
+            document.write("<td><center>" + pregunta + "</center></td>");
+            document.write("</tr>");
+        }
+        document.write("</table></center>");
+    </script>
+</head>
+<body>
+</body>
+</html>
